@@ -14,6 +14,7 @@ const projects = [
       '/projects/project1/img5.jpeg',
     ],
     tech: ['Embedded C', 'STM32CubeMX', 'Keil MDK-ARM', 'STM32F103C8T6', 'STM32 HAL'],
+    github: 'https://github.com/sarimamirdev/STM32-MultiMode-LED-Running-Light',
   },
   {
     title: 'CC2530 Wireless Light Monitoring System',
@@ -25,6 +26,7 @@ const projects = [
       '/projects/project2/img3.jpeg',
     ],
     tech: ['Embedded C', 'CC2530', 'BasicRF', 'UART', 'IAR Embedded Workbench', 'ZigBee'],
+    github: 'https://github.com/sarimamirdev/CC2530-Wireless-Light-Monitoring-System',
   },
   {
     title: 'Flask Student Attendance Management System',
@@ -38,17 +40,21 @@ const projects = [
       '/projects/project3/img5.jpeg',
     ],
     tech: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'HTML/CSS'],
+    github: 'https://github.com/sarimamirdev/attendance-system-flask',
   },
   {
     title: 'Flask E-Commerce Shopping Website',
     description:
       'A Flask-based e-commerce site with authentication, cart, and order processing using SQLite.',
     images: [
-      '/projects/project4/img2.jpeg',
-      '/projects/project4/img3.jpeg',
-      '/projects/project4/img4.jpeg',
+      '/projects/project4/login.png',
+      '/projects/project4/home.png',
+      '/projects/project4/products.png',
+      '/projects/project4/cart.png',
+      '/projects/project4/checkout.png',
     ],
     tech: ['Python', 'Flask', 'SQLAlchemy', 'SQLite', 'HTML/CSS', 'Jinja2'],
+    github: 'https://github.com/sarimamirdev/flask-ecommerce-app',
   },
   {
     title: 'STM32 Serial Port Redirection and LED Control System',
@@ -60,6 +66,7 @@ const projects = [
       '/projects/project5/img3.jpeg',
     ],
     tech: ['Embedded C', 'STM32CubeMX', 'Keil MDK-ARM', 'STM32F103VET6', 'STM32 HAL', 'UART'],
+    github: 'https://github.com/sarimamirdev/stm32-uart-led-controller',
   },
 ]
 
@@ -153,13 +160,15 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        {/* View Code button - stays visible but doesn't link anywhere */}
-        <button
-          onClick={() => alert('Source code coming soon!')}
+        {/* View Code - links straight to the GitHub repo in a new tab */}
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 text-sm px-4 py-2.5 rounded-lg bg-accent hover:bg-accentlight text-white transition-colors duration-200 w-full"
         >
           <FiGithub /> View Code
-        </button>
+        </a>
       </div>
     </div>
   )
